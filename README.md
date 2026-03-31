@@ -10,10 +10,11 @@ This repository contains SQL practice queries, problem solutions, and notes writ
 
 
 
-## Tech stack
+## Tech stack & Tools
 - Snowflake
 - SQL
 - SnowPro Core Certified
+- Claude AI & Chat GPT
 
 ## Dataset
 
