@@ -1,0 +1,83 @@
+Today I focused on strengthening my SQL fundamentals and started exploring Snowflake concepts.
+
+---
+
+## 🧠 Topics Covered
+
+### 🔹 SQL Concepts
+
+* Subqueries (Correlated & Non-Correlated)
+* Common Table Expressions (CTEs)
+* Joins:
+
+  * INNER JOIN
+  * LEFT JOIN
+  * Understanding missing data scenarios
+
+---
+
+### 🔹 Window Functions (Practice)
+
+* ROW_NUMBER()
+* RANK() vs DENSE_RANK()
+* FIRST_VALUE()
+* LAG()
+
+---
+
+### 🔹 Problems Solved
+
+* Latest order per customer
+* Second highest sale per customer
+* Running total of sales
+* Percentage contribution of orders
+* Difference between first and current order
+
+---
+
+## ❄️ Snowflake Learning
+
+### 🔹 Introduction
+
+* What is Snowflake?
+* Cloud Data Warehouse concept
+
+### 🔹 Architecture Overview
+
+* Storage Layer (Data Storage)
+* Compute Layer (Virtual Warehouses)
+* Cloud Services Layer
+
+### 🔹 Key Features
+
+* Separation of Storage & Compute
+* Scalability
+* High Performance
+* Pay-as-you-use model
+
+---
+
+## 💡 Key Learnings
+
+* Window functions are essential for analytical queries
+* ROW_NUMBER() vs RANK() depends on duplicates
+* Avoid unnecessary joins when using window functions
+* Snowflake simplifies data warehousing with its architecture
+
+---
+
+## 📌 Next Plan
+
+* Practice advanced SQL interview questions
+* Deep dive into Snowflake:
+
+  * Stages
+  * File formats
+  * Data loading (COPY INTO)
+
+---
+
+## 🔗 Tools Used
+
+* SQL (Practice)
+* Snowflake (Learning)
