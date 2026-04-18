@@ -1,0 +1,34 @@
+Snowflake follows a 3-layer architecture:
+
+1. Storage Layer
+Stores data in compressed columnar format
+Automatically manages storage
+2. Compute Layer (Virtual Warehouses)
+Executes queries
+Can scale independently
+Multiple warehouses can run simultaneously
+3. Cloud Services Layer
+Manages authentication, metadata, optimization
+🏗️ Key Objects in Snowflake
+Database
+Schema
+Table
+View
+Stage
+Warehouse
+
+🔹 Table Types
+1. Permanent Table
+Default table type
+Has Time Travel + Fail-safe
+2. Temporary Table
+CREATE TEMP TABLE temp_table AS
+SELECT * FROM my_table;
+Session-based
+Automatically deleted
+3. Transient Table
+CREATE TRANSIENT TABLE trans_table AS
+SELECT * FROM my_table;
+No Fail-safe
+Lower storage cost
+
