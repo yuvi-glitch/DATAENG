@@ -52,3 +52,9 @@ HAVING
       MAX(CASE WHEN rn = 2 THEN purchase_date END),
       MIN(CASE WHEN rn = 1 THEN purchase_date END)
     ) BETWEEN 1 AND 7
+
+
+ -- Find all posts which were reacted to with a heart. For such posts output all columns from facebook_posts table.
+select distinct fp.post_date,fp.post_id,fp.post_keywords,fp.post_text,fp.poster from facebook_post fp 
+inner join facebook_reactions fr on fp.post_id = fr.post_id
+where fr.reaction = 'Heart' ;
