@@ -68,5 +68,10 @@ select id,first_name,last_name,department_id,salary from
 row_number() over (partition by id  order by salary DESC ,department_id DESC  ) as rn 
 from ms_employee_salary) a where a.rn < 2 
 
+-- Find the total cost of each customer's orders. Output customer's id, first name, and the total order cost. Order records by customer's first name alphabetically.
+select o.cust_id,c.first_name,sum(o.total_order_cost) from 
+customers c inner join  orders o on c.id = o.cust_id
+group by c.id
+order by c.first_name desc ;
 
 
