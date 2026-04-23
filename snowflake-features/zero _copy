@@ -1,0 +1,19 @@
+-- Clone orders table
+CREATE TABLE orders_clone CLONE orders;
+
+-- Verify same data
+SELECT COUNT(*) FROM orders;
+SELECT COUNT(*) FROM orders_clone;
+
+-- Make change to clone only
+INSERT INTO orders_clone VALUES 
+(11, 101, 2, 3, '2025-04-23', '2025-04-28', 
+'Delivered', '123 Test St', '123 Test St', 
+1, 10, '2025-04-23 12:00:00');
+
+-- Original unchanged
+SELECT COUNT(*) FROM orders;        -- still 10
+SELECT COUNT(*) FROM orders_clone;  -- now 11
+
+-- Cleanup
+DROP TABLE orders_clone;
