@@ -58,3 +58,15 @@ HAVING
 select distinct fp.post_date,fp.post_id,fp.post_keywords,fp.post_text,fp.poster from facebook_post fp 
 inner join facebook_reactions fr on fp.post_id = fr.post_id
 where fr.reaction = 'Heart' ;
+
+/*We have a table with employees and their salaries; however, some of the records are old and contain outdated salary information. 
+Since there is no timestamp, assume salary is non-decreasing over time. You can consider the current salary for an employee is the largest salary value among their records. 
+If multiple records share the same maximum salary, return any one of them. 
+Output their id, first name, last name, department ID, and current salary. Order your list by employee ID in ascending order.*/
+select id,first_name,last_name,department_id,salary from
+(select distinct salary ,id,first_name,last_name,department_id,
+row_number() over (partition by id  order by salary DESC ,department_id DESC  ) as rn 
+from ms_employee_salary) a where a.rn < 2 
+
+
+
