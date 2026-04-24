@@ -74,4 +74,32 @@ customers c inner join  orders o on c.id = o.cust_id
 group by c.id
 order by c.first_name desc ;
 
+-- Find the average total compensation based on employee titles and gender. Total compensation is calculated by adding both the salary and bonus of each employee. However, not every employee receives a bonus so disregard employees without bonuses in your calculation. Employee can receive more than one bonus.
+-- Output the employee title, gender (i.e., sex), along with the average total compensation.
+
+WITH bonus_per_employee AS (
+    SELECT 
+        se.id,
+        se.employee_title,
+        se.sex,
+        se.salary,
+        SUM(sb.bonus) AS total_bonus
+    FROM sf_employee se
+    INNER JOIN sf_bonus sb ON se.id = sb.worker_ref_id
+    GROUP BY se.id, se.employee_title, se.sex, se.salary
+),
+total_compensation AS (
+    SELECT
+        employee_title,
+        sex,
+        salary + total_bonus AS total_comp
+    FROM bonus_per_employee
+)
+SELECT
+    employee_title,
+    sex,
+    AVG(total_comp) AS avg_total_compensation
+FROM total_compensation
+GROUP BY employee_title, sex;
+
 
