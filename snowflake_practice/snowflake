@@ -1,0 +1,6 @@
+-- Query 1: Stream check
+SELECT * FROM orders_stream;
+
+-- Query 2: Task history
+SELECT * FROM TABLE(INFORMATION_SCHEMA.TASK_HISTORY())
+ORDER BY SCHEDULED_TIME DESC LIMIT 5;
