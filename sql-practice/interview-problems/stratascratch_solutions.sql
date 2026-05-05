@@ -126,4 +126,8 @@ HAVING CEILING(DATEDIFF(a.end_date, a.start_date) *
   SUM(c.salary) / 365) > a.budget
 ORDER BY a.title ASC;
 
-
+/*Meta/Facebook Matching Users Pairs
+Find matching pairs of Meta/Facebook employees such that they are both of the same nation, different age, same gender, and at different seniority levels.
+Output ids of paired employees.*/
+select e1.id,e2.id from facebook_employees e1 join facebook_employees e2 on e1.id<>e2.id
+where e1.location = e2.location and e1.age <> e2.age and e1.gender = e2.gender and e1.is_senior <> e2.is_senior
