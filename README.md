@@ -16,6 +16,7 @@ This repository contains SQL practice queries, problem solutions, and notes writ
 - SnowPro Core Certified
 - Claude AI & Chat GPT
 - python 
+- data bricks
 
 ## Dataset
 
