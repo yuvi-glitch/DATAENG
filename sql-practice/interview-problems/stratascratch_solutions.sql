@@ -131,3 +131,15 @@ Find matching pairs of Meta/Facebook employees such that they are both of the sa
 Output ids of paired employees.*/
 select e1.id,e2.id from facebook_employees e1 join facebook_employees e2 on e1.id<>e2.id
 where e1.location = e2.location and e1.age <> e2.age and e1.gender = e2.gender and e1.is_senior <> e2.is_senior
+
+
+/*Department Workforce Analysis
+The workforce planning team is analyzing department growth since the company's expansion, focusing on teams that have grown substantially.
+For each department with 5 or more employees hired after 2020, return the name, headcount, total payroll, and average salary.*/
+select department ,count(id) as headcount,
+sum(salary) as total_payroll , avg(salary) as average_salary
+from techcorp_workforce
+where year(joining_date) > 2020 
+group by department 
+having count(*) > 5 ;
+
