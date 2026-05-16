@@ -1,0 +1,21 @@
+# dbt Snowflake Project
+
+## Overview
+dbt project connected to Snowflake salesdb.
+Built following Zoltan C. Toth's Complete dbt Bootcamp.
+
+## Tech Stack
+- dbt Core
+- Snowflake
+- Python / uv
+
+## Setup
+1. Install uv
+2. Create virtual environment
+3. Install dbt-snowflake
+4. Configure profiles.yml with your Snowflake credentials
+5. Run dbt debug to verify connection
+
+## Status
+- Section 2 complete — Snowflake connection established
+- Models in progress
